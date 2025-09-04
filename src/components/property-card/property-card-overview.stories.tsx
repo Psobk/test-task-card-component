@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PropertyCard } from "./property-card";
 import { type DetailPill } from "./components/pill/pill.types";
 

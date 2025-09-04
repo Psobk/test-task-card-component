@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PropertyHeader } from "./property-header";
 
 const meta: Meta<typeof PropertyHeader> = {

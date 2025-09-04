@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PropertyCard } from "./property-card";
 import { type DetailPill } from "./components/pill/pill.types";
 
@@ -236,30 +236,6 @@ export const ManyDetails: Story = {
           ),
         },
       ],
-    },
-    actions: {
-      onMenuClick: () => console.log("Menu clicked"),
-    },
-  },
-};
-
-export const LongContent: Story = {
-  args: {
-    property: {
-      images: [
-        "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg",
-        "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg",
-      ],
-      title:
-        "Property with Very Long Title That Might Overflow or Wrap to Multiple Lines",
-      subtitle:
-        "12345 Very Long Street Name That Goes On and On, Some Very Long City Name That Also Continues, State",
-      description:
-        "This is an extremely long description that will test how the component handles text overflow and wrapping. The description should be truncated or wrapped appropriately to maintain the component's visual integrity. This property offers numerous features and amenities that make it an exceptional choice for discerning buyers who are looking for something truly special in the real estate market.",
-      kpi: 87,
-      nextUpText:
-        "Very long next up text that might also test text wrapping and overflow behavior",
-      details: mockPills,
     },
     actions: {
       onMenuClick: () => console.log("Menu clicked"),

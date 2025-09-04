@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MenuButton } from "./menu-button";
 
 const meta: Meta<typeof MenuButton> = {
