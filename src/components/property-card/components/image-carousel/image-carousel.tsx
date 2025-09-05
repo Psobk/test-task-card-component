@@ -10,7 +10,6 @@ export function ImageCarousel({
 }: ImageCarouselProps) {
   const imageArray = Array.isArray(images) ? images : [images];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const currentImage = imageArray[currentImageIndex];
   const totalImages = imageArray.length;
 
   const handlePrevious = () => {
@@ -34,7 +33,11 @@ export function ImageCarousel({
 
   return (
     <div
-      className={`relative ${className}`}
+      className={`relative ${className} ${
+        isMobile
+          ? "w-full aspect-video"
+          : "w-[var(--carousel-width)] h-[var(--carousel-height)]"
+      }`}
       style={
         {
           "--carousel-height":
@@ -42,13 +45,22 @@ export function ImageCarousel({
         } as React.CSSProperties
       }
     >
-      <img
-        src={currentImage}
-        alt=""
-        className={`w-full object-cover image-height-dynamic ${
+      <div
+        className={`relative w-full h-full overflow-hidden shadow-[0px_2px_4px_-2px_#0000001A,0px_4px_6px_-1px_#0000001A] ${
           isMobile ? "" : "rounded-xl"
         }`}
-      />
+      >
+        {imageArray.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-150 ease-in-out ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
 
       {totalImages > 1 && (
         <>

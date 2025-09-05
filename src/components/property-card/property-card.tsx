@@ -27,10 +27,10 @@ export function PropertyCard({
       className={`relative overflow-hidden bg-white shadow-sm ${className}`}
     >
       <div className="hidden md:block p-6">
-        <div className="grid grid-cols-[240px_1fr] gap-6">
+        <div className="grid grid-cols-[224px_1fr] gap-6">
           <ImageCarousel images={images} />
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-3">
                 <PropertyHeader title={title} subtitle={subtitle} kpi={kpi} />
@@ -43,7 +43,7 @@ export function PropertyCard({
             </div>
 
             {details.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+              <div className="flex gap-2 overflow-x-auto scrollbar-hide py-1">
                 {details.map((d) => (
                   <Pill key={d.id} pill={d} />
                 ))}
@@ -65,7 +65,7 @@ export function PropertyCard({
           </div>
 
           {details.length > 0 && (
-            <div className="flex gap-2 mb-3 overflow-x-auto scrollbar-hide -mx-6 px-6">
+            <div className="flex gap-2 mb-3 overflow-x-auto scrollbar-hide -mx-6 px-6 py-1">
               {details.map((d) => (
                 <Pill key={d.id} pill={d} />
               ))}
