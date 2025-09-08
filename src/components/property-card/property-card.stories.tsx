@@ -55,6 +55,110 @@ const mockPills: DetailPill[] = [
       />
     ),
   },
+  {
+    id: 5,
+    label: "Pool",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Pool"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 6,
+    label: "Garden",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Garden"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 7,
+    label: "Gym",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Gym"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 8,
+    label: "Balcony",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Balcony"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 9,
+    label: "Fireplace",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Fireplace"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 10,
+    label: "AC",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="AC"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 11,
+    label: "WiFi",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="WiFi"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
+  {
+    id: 12,
+    label: "Pet Friendly",
+    icon: (
+      <img
+        src="/key.svg"
+        alt="Pet Friendly"
+        width="16"
+        height="16"
+        className="text-primary"
+      />
+    ),
+  },
 ];
 
 const meta: Meta<typeof PropertyCard> = {
@@ -194,48 +298,7 @@ export const ManyDetails: Story = {
         "An exceptional luxury property with extensive amenities and features. This stunning home offers unparalleled comfort and style in one of the most sought-after locations.",
       kpi: 98,
       nextUpText: "Schedule private tour",
-      details: [
-        ...mockPills,
-        {
-          id: 5,
-          label: "Pool",
-          icon: (
-            <img
-              src="/key.svg"
-              alt="Pool"
-              width="16"
-              height="16"
-              className="text-primary"
-            />
-          ),
-        },
-        {
-          id: 6,
-          label: "Garden",
-          icon: (
-            <img
-              src="/key.svg"
-              alt="Garden"
-              width="16"
-              height="16"
-              className="text-primary"
-            />
-          ),
-        },
-        {
-          id: 7,
-          label: "Gym",
-          icon: (
-            <img
-              src="/key.svg"
-              alt="Gym"
-              width="16"
-              height="16"
-              className="text-primary"
-            />
-          ),
-        },
-      ],
+      details: mockPills,
     },
     actions: {
       onMenuClick: () => console.log("Menu clicked"),
@@ -270,6 +333,27 @@ export const CustomStyling: Story = {
       details: mockPills,
     },
     className: "border-2 border-blue-500 rounded-lg",
+    actions: {
+      onMenuClick: () => console.log("Menu clicked"),
+    },
+  },
+};
+
+export const ScrollablePillsTest: Story = {
+  args: {
+    property: {
+      images: [
+        "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg",
+        "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg",
+      ],
+      title: "Scrollable Pills Test",
+      subtitle: "Test Street 123, Scroll City",
+      description:
+        "This property has many pills to test the horizontal scrolling functionality. Try dragging with your mouse to scroll through all the pills.",
+      kpi: 85,
+      nextUpText: "Test scrolling",
+      details: mockPills,
+    },
     actions: {
       onMenuClick: () => console.log("Menu clicked"),
     },

@@ -3,7 +3,7 @@ import { PropertyHeader } from "./components/property-header";
 import { PropertyDescription } from "./components/property-description";
 import { MenuButton } from "./components/menu-button";
 import { NextUpSection } from "./components/next-up-section";
-import { Pill } from "./components/pill";
+import { ScrollablePills } from "./components/scrollable-pills";
 import { type PropertyCardProps } from "./property-card.types";
 
 export function PropertyCard({
@@ -30,23 +30,21 @@ export function PropertyCard({
         <div className="grid grid-cols-[224px_1fr] gap-6">
           <ImageCarousel images={images} />
 
-          <div className="flex flex-col gap-2">
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-2 min-w-0">
+            <div className="flex items-start justify-between gap-3 min-w-0">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
                 <PropertyHeader title={title} subtitle={subtitle} kpi={kpi} />
               </div>
 
-              <div className="flex items-center gap-3 h-full">
+              <div className="flex items-center gap-3 h-full flex-shrink-0">
                 <NextUpSection nextUpText={nextUpText} />
                 <MenuButton onClick={onMenuClick} />
               </div>
             </div>
 
             {details.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide py-1">
-                {details.map((d) => (
-                  <Pill key={d.id} pill={d} />
-                ))}
+              <div className="min-w-0">
+                <ScrollablePills pills={details} />
               </div>
             )}
 
@@ -65,10 +63,8 @@ export function PropertyCard({
           </div>
 
           {details.length > 0 && (
-            <div className="flex gap-2 mb-3 overflow-x-auto scrollbar-hide -mx-6 px-6 py-1">
-              {details.map((d) => (
-                <Pill key={d.id} pill={d} />
-              ))}
+            <div className="mb-3 -mx-6 px-6">
+              <ScrollablePills pills={details} />
             </div>
           )}
 
